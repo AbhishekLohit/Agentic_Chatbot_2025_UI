@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zomato Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="chat-window">
+        <div class="chat-header">
+            <div class="header-left">
+                <h2>Zomato Chatbot</h2>
+                <span class="user-id">Hello, {{ user_id }}</span>
+            </div>
+            <div class="header-right">
+                <a href="{{ url_for('logout') }}"><button class="logout-btn">Logout</button></a>
+            </div>
+        </div>
+
+        <div id="chatbox" class="chatbox">
+            <!-- Chat messages appear here -->
+        </div>
+
+        <div class="chat-input">
+            <input id="userInput" type="text" placeholder="Type your message..." onkeydown="if(event.key==='Enter'){sendMessage();}">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
