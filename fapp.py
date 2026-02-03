@@ -7,7 +7,7 @@ app.secret_key = SECRET_KEY
 
 # Dummy users (replace with database in production)
 users_db = {
-    "Cust_001": "pass123",
+    "Cust_0410": "pass123",
     "Cust_002": "mypassword"
 }
 
@@ -44,7 +44,8 @@ def get_bot_response():
                    "user_query": user_msg}
         )
         print(res.json())
-        bot_reply = res.json().get("generated_response", "No response from bot")
+        # bot_reply = res.json().get("entity_extraction_response", "No response from bot")
+        bot_reply = str(res.json())
     except Exception as e:
         bot_reply = f"Error contacting FastAPI: {e}"
 
